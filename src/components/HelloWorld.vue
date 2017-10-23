@@ -39,6 +39,7 @@ export default {
     },
     increment () {
       this.$store.commit('increment')
+      this.$store.commit('setResource', ['test'])
     }
   }
 }
