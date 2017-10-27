@@ -1,6 +1,6 @@
-# dms
+# vue-desktop
 
-> A Vue.js project
+> 基于vue和element-ui集成的桌面端管理系统骨架
 
 ## Build Setup
 
