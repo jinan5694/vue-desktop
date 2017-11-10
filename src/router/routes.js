@@ -1,22 +1,21 @@
 /**
  * 异步组件定义
  */
+
 const routes = []
 
 routes.push({
-  label: 'index',
-  name: 'index',
-  path: '/index',
-  component: getComponent('Index')
+  path: '/error',
+  component: getAsyncComp('ErrorComp')
 })
 
 routes.push({
-  label: 'login',
-  name: 'login',
-  path: '/login',
-  component: getComponent('Login')
+  path: '/loading',
+  component: getAsyncComp('LoadingComp')
 })
 
-function getComponent (path) {
-  return () => import('../page/' + path + '.vue')
+function getAsyncComp (path) {
+  return () => import('@/page/' + path + '.vue')
 }
+
+export default routes

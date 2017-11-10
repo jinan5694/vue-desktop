@@ -5,6 +5,8 @@ import Login from '@/page/Login'
 import Index from '@/page/Index'
 import NotFound from '@/page/NotFound'
 
+import routes from '@/router/routes'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -21,6 +23,7 @@ const router = new Router({
       name: 'index',
       component: Index
     },
+    ...routes,
     {
       path: '*',
       name: 'NotFound',
@@ -45,8 +48,7 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(route => {
-  console.log('afterEach', route.path)
-  if (route.path !== '/login') {
+  if (route.meta.ignoreAuth) {
     sessionStorage.path = route.path
   }
 })
